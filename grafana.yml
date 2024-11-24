@@ -15,5 +15,5 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     labels:
-      - "traefik.http.routers.whoami.rule=Host(`grafana.ugur.com`)"
+      - "traefik.http.routers.grafana.rule=Host(`grafana.ugur.com`)"
 
