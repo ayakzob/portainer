@@ -5,10 +5,10 @@ services:
     image: pihole/pihole:latest
     # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
     ports:
+      - "1111:80/tcp"
       - "53:53/tcp"
       - "53:53/udp"
     # - "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
-      - "1111:80/tcp"
     environment:
       TZ: 'America/Chicago'
       # WEBPASSWORD: 'set a secure password here or it will be random'
@@ -21,4 +21,5 @@ services:
     #cap_add:
     #  - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
     restart: unless-stopped
+    - "traefik.http.routers.grafana.rule=Host(`pihole.ugur.com`)"
 
