@@ -1,0 +1,11 @@
+services:
+  rtmp:
+    image: tiangolo/nginx-rtmp
+    container_name: nginx-rtmp
+    restart: always
+    ports:
+      - 1935:1935
+      - 82:80
+    volumes:
+      - /home/ubuntu/rtmp.conf:/etc/nginx/nginx.conf
+      - /media/jmicron/rtmp:/tmp/rtmp
