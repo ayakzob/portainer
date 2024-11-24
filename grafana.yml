@@ -16,4 +16,5 @@ services:
       - "host.docker.internal:host-gateway"
     labels:
       - "traefik.http.routers.grafana.rule=Host(`grafana.ugur.com`)"
+      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
 
