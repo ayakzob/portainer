@@ -4,6 +4,12 @@ services:
     container_name: kafka
     ports:
       - 9092:9092
+    deploy:
+      resources:
+        limits:
+          memory: 4g        # Maximum memory the container can use
+        reservations:
+          memory: 1g        # Guaranteed memory for the container
     environment:
       KAFKA_MESSAGE_MAX_BYTES: 10485760
       KAFKA_NODE_ID: 1
@@ -37,3 +43,8 @@ services:
       DYNAMIC_CONFIG_ENABLED: 'true'
     #volumes:
     #  - ~/kui_config.yml:/etc/kafkaui/dynamic_config.yaml
+volumes:
+  kafka-volume:
+    driver: local
+    driver_opts:
+      size: 100G
