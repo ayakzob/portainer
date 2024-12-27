@@ -43,8 +43,3 @@ services:
       DYNAMIC_CONFIG_ENABLED: 'true'
     #volumes:
     #  - ~/kui_config.yml:/etc/kafkaui/dynamic_config.yaml
-volumes:
-  kafka-volume:
-    driver: local
-    driver_opts:
-      size: 100G
