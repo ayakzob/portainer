@@ -1,8 +1,9 @@
-tinyproxy:
-  image: vimagick/tinyproxy
-  container_name: tinyproxy
-  ports:
-    - "3128:8888"
-  volumes:
-    - ./tmp:/etc/tinyproxy
-  restart: unless-stopped
+services:
+  tinyproxy:
+    image: vimagick/tinyproxy
+    container_name: tinyproxy
+    ports:
+      - "3128:8888"
+    volumes:
+      - ./tmp:/etc/tinyproxy
+    restart: unless-stopped
