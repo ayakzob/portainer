@@ -6,9 +6,9 @@ services:
     labels:
       homepage.group: Home Automation
       homepage.name: Home Assistant
-      #homepage.icon: plex.png
-      #homepage.href: http://plex:32400
-      #homepage.description: Streaming server
+      homepage.icon: plex.png
+      homepage.href: http://plex:32400
+      homepage.description: Streaming server
     volumes:
       - /homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
