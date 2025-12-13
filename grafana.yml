@@ -1,12 +1,6 @@
 services:
   grafana:
     image: grafana/grafana-enterprise
-    labels:
-      homepage.group: Grafana
-      homepage.name: Grafana
-      homepage.icon: plex.png
-      homepage.href: http://plex:32400
-      homepage.description: Grafana
     user: "0"
     container_name: grafana
     restart: unless-stopped
@@ -20,6 +14,11 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     labels:
+      homepage.group: Grafana
+      homepage.name: Grafana
+      homepage.icon: plex.png
+      homepage.href: http://plex:32400
+      homepage.description: Grafana
       - "traefik.http.routers.grafana.rule=Host(`grafana.ugur.com`)"
       #- "traefik.http.routers.whoami.rule=Host(`grafana.ugur.com`)"
       #- traefik.http.services.grafana.loadbalancer.server.port=3000
