@@ -3,6 +3,12 @@ services:
   homeassistant:
     container_name: homeassistant
     image: "ghcr.io/home-assistant/home-assistant:stable"
+    labels:
+      homepage.group: Home Automation
+      homepage.name: Home Assistant
+      #homepage.icon: plex.png
+      #homepage.href: http://plex:32400
+      #homepage.description: Streaming server
     volumes:
       - /homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
