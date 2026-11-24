@@ -1,0 +1,13 @@
+services:
+  matterjs-server:
+    image: ghcr.io/matter-js/matterjs-server:stable
+    container_name: matterjs-server
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - matter_data:/data
+      # Uncomment below only if your Linux host has Bluetooth and you want host BLE commissioning:
+      # - /run/dbus:/run/dbus:ro
+
+volumes:
+  matter_data:
